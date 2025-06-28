@@ -20,6 +20,11 @@ If Microsoft .NET Framework is installed, it is not necessary to install Visual 
    - Set the service logon account to Local System Account.
 6. Start the service with no devices connected and output the recognized devices.
 7. Dynamically update the whitelist file as needed.
+   - "Staticlist" is loaded when the service starts and is not reloaded while the service is running. (One DeviceID per line)
+   - "Whitelist" is loaded each time the file is updated when a device is connected. (One DeviceID per line, supports wildcards)
+   ```
+   USB\VID_0000\PID_0000\0000SERIAL0000
+   ```
 
 ## Uninstall
 1. Please search for "installutil.exe" under "C:\Windows\Microsoft.NET".
@@ -33,4 +38,4 @@ If Microsoft .NET Framework is installed, it is not necessary to install Visual 
   in sample install batch
 - [https://symfoware.blog.fc2.com/blog-entry-1132.html]
   service code sample
-- 
+
